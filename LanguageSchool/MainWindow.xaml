@@ -1,0 +1,21 @@
+﻿<Window x:Class="LanguageSchool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LanguageSchool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="res\school_logo.ico" FontFamily="Comic Sans MS" >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"  ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Background="#FFE7FABF"></Border>
+        <Button Content="Назад" Name="BackBtn" Click="BackBtn_Click" Background="#FF04A0FF" HorizontalAlignment="Right" ></Button>
+        <Image Source="res\school_logo.png" HorizontalAlignment="Left" ></Image>
+        <TextBlock Text="Сафин Лангуаге" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="40" ></TextBlock>
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" ></Frame>
+    </Grid>
+</Window>
