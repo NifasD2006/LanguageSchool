@@ -44,5 +44,15 @@ namespace LanguageSchool
             }
 
         }
+
+        public void Updateclients(string newText)
+        {
+            // Находим первую страницу и обновляем текст
+            if (MainFrame.Content is ClientPage ClientPage)
+            {
+                ClientPage.UpdateClients();
+            }
+        }
+
     }
 }

@@ -10,26 +10,28 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="60" ></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
         </Grid.RowDefinitions>
+        
         <StackPanel Grid.Row="0" HorizontalAlignment="Left" Margin="10,5,0,10" Orientation="Horizontal">
-            <TextBlock Text="Поиск:"></TextBlock>
+            <TextBlock Text="Поиск:" Height="30" Width="80"></TextBlock>
             <TextBox Height="30" Width="200" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" ></TextBox>
-            <TextBlock Text="Пол:" Margin="5,5,0,0" ></TextBlock>
+            <TextBlock Text="Пол:" Margin="5,5,0,0" Height="30" Width="50" ></TextBlock>
             <ComboBox Height="30" Width="120" SelectionChanged="GenderCB_SelectionChanged" x:Name="GenderCB" >
                 <TextBlock Text="ВСЕ" />
                 <TextBlock Text="Женский" />
                 <TextBlock Text="Мужской" />
             </ComboBox>
-            <TextBlock Text="Сортировка:" Margin="5,5,0,0"></TextBlock>
+            <TextBlock Text="Сортировка:" Margin="5,5,0,0" Height="30" Width="120" ></TextBlock>
             <ComboBox Height="30" Width="220" SelectionChanged="SortCB_SelectionChanged" x:Name="SortCB" >
                 <TextBlock Text="Нет" />
                 <TextBlock Text="По фамилии от А до Я" />
                 <TextBlock Text="По дате последнего посещения" />
                 <TextBlock Text="По количеству посещений" />
             </ComboBox>
+            <Button Content="Добавить пользователя" Width="250" Height="36" Name="AddBtn" Click="AddBtn_Click"  ></Button>
         </StackPanel>
         
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal" >
@@ -111,8 +113,10 @@
                             <TextBlock Grid.Row="1" Grid.Column="1" Text="Кол-во посещений:" Margin="5" ></TextBlock>
                             <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding VisitCount}" Margin="5"></TextBlock>
                         </StackPanel>
-                        <StackPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="5" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button x:Name="DeleteBtn" Content="Удалить" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Click="DeleteBtn_Click"  ></Button>
+                        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Grid.RowSpan="5" Orientation="Vertical" HorizontalAlignment="Center">
+                            <Button x:Name="EditBtn" Content="Редактировать" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Click="EditBtn_Click" Width="170"  ></Button>
+                            <Button x:Name="DeleteBtn" Content="Удалить" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Click="DeleteBtn_Click" Width="170" ></Button>
+                            
                         </StackPanel>
                         
                     </Grid>
